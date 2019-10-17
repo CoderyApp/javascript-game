@@ -30,3 +30,35 @@ body {
     text-align: center;
     font-size: 5rem;
 }
+
+.game {
+    width: 600px;
+    height: 300px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 5px;
+    margin: 0 auto;
+}
+
+.game__element {
+    position: relative;
+}
+
+.game__ninja {
+    position: absolute;
+    top: 0px;
+    left:0px;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    user-select: none;
+}
+
+.game__floor {
+    width: 100%;
+    height: 30px;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    user-select: none;
+}
