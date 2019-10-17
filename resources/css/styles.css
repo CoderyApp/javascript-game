@@ -36,8 +36,9 @@ body {
     height: 300px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    column-gap: 5px;
     margin: 0 auto;
+    column-gap: 5px;
+    opacity: 0;
 }
 
 .game__element {
@@ -71,4 +72,8 @@ body {
 
 .disable-element{
     pointer-events:none;
+}
+
+.show-element{
+    opacity: 1;
 }

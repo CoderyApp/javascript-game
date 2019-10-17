@@ -2,6 +2,7 @@ const startGameButton = document.getElementById('startGameButton');
 const ninjas = document.querySelectorAll('.game__ninja');
 const resultLabel = document.getElementById('resultLabel');
 const scoreLabel = document.getElementById('scoreLabel');
+const gameContainer = document.getElementById('game');
 
 const GAME_MIN_TIME_MILLISECONDS = 500;
 const GAME_MAX_TIME_MILLISECONDS = 700;
@@ -20,6 +21,7 @@ function startGame() {
     resetGame();
     disableElement(startGameButton);
     showRandomNinja();
+    showElement(gameContainer);
     setTimeout(() => {
         endGame();
     }, GAME_DURATION_MILLISECONDS);
@@ -30,6 +32,7 @@ function endGame() {
     resultLabel.textContent = `Twój wynik  ${score}`;
     scoreLabel.textContent = 'Start';
     enableElement(startGameButton);
+    hideElement(gameContainer);
 }
 
 function showRandomNinja() {
@@ -73,4 +76,12 @@ function resetGame() {
     resultLabel.textContent = "";
     timeUp = false;
     score = 0;
+}
+
+function showElement(element) {
+    element.classList.add('show-element');
+}
+
+function hideElement(element) {
+    element.classList.remove('show-element');
 }
