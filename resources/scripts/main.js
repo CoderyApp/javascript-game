@@ -18,6 +18,7 @@ let score = 0;
 
 function startGame() {
     scoreLabel.textContent = 0;
+    disableElement(startGameButton)
     showRandomNinja();
     setTimeout(() => {
         endGame();
@@ -28,6 +29,7 @@ function endGame() {
     timeUp = true;
     resultLabel.textContent = `Twój wynik  ${score}`;
     scoreLabel.textContent = 'Start';
+    enableElement(startGameButton);
 }
 
 function showRandomNinja() {
@@ -56,4 +58,12 @@ function userDidTapNinja() {
     score += 1;
     this.classList.remove('up');
     scoreLabel.textContent = score;
+}
+
+function disableElement(element) {
+    element.classList.add('disable-element');
+}
+
+function enableElement(element) {
+    element.classList.remove('disable-element');
 }

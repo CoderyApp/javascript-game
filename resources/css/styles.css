@@ -68,3 +68,7 @@ body {
 .up {
     top: 0;
 }
+
+.disable-element{
+    pointer-events:none;
+}
