@@ -1,6 +1,9 @@
 const startGameButton = document.getElementById('startGameButton');
 const ninjas = document.querySelectorAll('.game__ninja');
 
+const GAME_MIN_TIME_MILLISECONDS = 500;
+const GAME_MAX_TIME_MILLISECONDS = 700;
+
 startGameButton.addEventListener('click', startGame);
 
 function startGame() {
@@ -10,7 +13,7 @@ function startGame() {
 function showRandomNinja() {
     const ninja = getRandomNinja();
     ninja.classList.add('up');
-    const randomTime = 1000;
+    const randomTime = getRandomNumber(GAME_MIN_TIME_MILLISECONDS, GAME_MAX_TIME_MILLISECONDS);
     setTimeout(() => {
         ninja.classList.remove('up');
     }, randomTime);
