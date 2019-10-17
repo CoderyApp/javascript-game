@@ -8,10 +8,20 @@ function startGame() {
 }
 
 function showRandomNinja() {
-    const ninja = ninjas[0]
+    const ninja = getRandomNinja();
     ninja.classList.add('up');
-    const randomTime = 1000
+    const randomTime = 1000;
     setTimeout(() => {
         ninja.classList.remove('up');
     }, randomTime);
+}
+
+function getRandomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
+}
+
+function getRandomNinja() {
+    const randomIndex = getRandomNumber(0, ninjas.length - 1);
+    const ninja = ninjas[randomIndex];
+    return ninja;
 }
