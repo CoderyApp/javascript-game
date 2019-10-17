@@ -17,8 +17,8 @@ let timeUp = false;
 let score = 0;
 
 function startGame() {
-    scoreLabel.textContent = 0;
-    disableElement(startGameButton)
+    resetGame();
+    disableElement(startGameButton);
     showRandomNinja();
     setTimeout(() => {
         endGame();
@@ -66,4 +66,11 @@ function disableElement(element) {
 
 function enableElement(element) {
     element.classList.remove('disable-element');
+}
+
+function resetGame() {
+    scoreLabel.textContent = 0;
+    resultLabel.textContent = "";
+    timeUp = false;
+    score = 0;
 }
