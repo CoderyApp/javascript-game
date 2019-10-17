@@ -6,6 +6,11 @@ const GAME_MAX_TIME_MILLISECONDS = 700;
 const GAME_DURATION_MILLISECONDS = 5000;
 
 startGameButton.addEventListener('click', startGame);
+ninjas.forEach(ninja => {
+    ninja.addEventListener('click', userDidTapNinja)
+});
+
+
 let timeUp = false;
 
 function startGame() {
@@ -39,4 +44,8 @@ function getRandomNinja() {
     const randomIndex = getRandomNumber(0, ninjas.length - 1);
     const ninja = ninjas[randomIndex];
     return ninja;
+}
+
+function userDidTapNinja() {
+    this.classList.remove('up');
 }
