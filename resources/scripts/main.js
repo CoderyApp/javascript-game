@@ -16,6 +16,7 @@ ninjas.forEach(ninja => {
 
 let timeUp = false;
 let score = 0;
+let lastNinja;
 
 function startGame() {
     resetGame();
@@ -54,6 +55,10 @@ function getRandomNumber(min, max) {
 function getRandomNinja() {
     const randomIndex = getRandomNumber(0, ninjas.length - 1);
     const ninja = ninjas[randomIndex];
+    if (ninja === lastNinja) {
+        return getRandomNinja();
+    }
+    lastNinja = ninja;
     return ninja;
 }
 
